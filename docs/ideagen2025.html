@@ -24,6 +24,7 @@
 
         // ccodeが存在する場合、URLを生成してリダイレクト
         const ccode = getCcode();
+        let fullURL;
         if (ccode) {
             const fullURL = `https://jp.surveymonkey.com/r/YYT573P?ccode=${ccode}`;
             // window.location.href = redirectUrl;
