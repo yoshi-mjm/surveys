@@ -28,6 +28,9 @@
         if (ccode) {
             const redirectUrl = `https://jp.surveymonkey.com/r/YYT573P?ccode=${ccode}`;
             // window.location.href = redirectUrl;
+        } else {
+            // ccodeが存在しない場合、デフォルトのURLを使用
+            const redirectUrl = "https://jp.surveymonkey.com/r/YYT573P";
         }
         const target = document.getElementById("dest");
         target.href = redirectUrl;
