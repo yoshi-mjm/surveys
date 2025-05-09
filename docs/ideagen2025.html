@@ -8,18 +8,17 @@
     <link rel="stylesheet" href="styles.css"> <!-- 外部CSSファイル -->
 </head>
 <body>
-    <header>
-        <h1>Idea Generation Study</h1>
-    </header>
-    <main>
-        <p>Please click the below link!</p>
-        <p><a id="dest" href="https://jp.surveymonkey.com/r/YYT573P?ccode=[ccode_value]">Survey Link</a></p>
-    </main>
-        <!-- https://jp.surveymonkey.com/r/YYT573P?ccode=[ccode_value] -->
-    <script>
+    <h1>Idea Generation Study</h1>
+    <p>Please click the below link!</p>
+    <p><a id="dymamic-link" href="#">Survey Link</a></p>
+    <script type="text/javascript">
         // ランダムな cccode を生成
-        function getCcode() {
-            const randomCode = Math.floor(math.random() * (10000000000 - 1000000000) + 1000000000);
+        function getCcode(length = 10) {
+            // 10桁のランダムな整数を生成
+            let randomCode = '';
+            for (let i = 0; i < length; i++) {
+                randomCode += Math.floor(Math.random() * 10);
+            }
             return randomCode;
         }
 
@@ -32,9 +31,9 @@
             // ccodeが存在しない場合、デフォルトのURLを使用
             const redirectUrl = "https://jp.surveymonkey.com/r/YYT573P";
         }
-        const target = document.getElementById("dest");
-        target.setAttribute("href", redirectUrl);
-        target.innerHTML = redirectUrl;
+        const linkElement = document.getElementById("dymamic-link");
+        linkElement.setAttribute("href", redirectUrl);
+        linkElement.textContent = redirectUrl
     </script>
 </body>
 </html>
