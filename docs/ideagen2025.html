@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Idea Generation Study 2025">
+    <title>Idea Generation Study 2025</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 外部CSSファイル -->
+</head>
+<body>
+    <header>
+        <h1>Idea Generation Study</h1>
+    </header>
+    <main>
+        <p>Please click the below link!</p>
+        <p><a id="dest" href="https://jp.surveymonkey.com/r/YYT573P?ccode=[ccode_value]">Survey Link</a></p>
+    </main>
+        <!-- https://jp.surveymonkey.com/r/YYT573P?ccode=[ccode_value] -->
+    <script type="text/javascript">
+        // ランダムな cccode を生成
+        function getCcode() {
+            const randomCode = Math.floor(math.random() * (10000000000 - 1000000000) + 1000000000);
+            return randomCode;
+        }
+
+        // ccodeが存在する場合、URLを生成してリダイレクト
+        const ccode = getCcode();
+        if (ccode) {
+            const redirectUrl = `https://jp.surveymonkey.com/r/YYT573P?ccode=${ccode}`;
+            // window.location.href = redirectUrl;
+        }
+        const target = document.getElementById("dest");
+        target.htref = redirectUrl
+    </script>
+</body>
+</html>
