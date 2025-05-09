@@ -1,0 +1,9 @@
+.centered {
+  text-align: center;
+}
+.comp_code {
+    font-family: monospace;
+    font-size: x-large;
+    text-align: center;
+    color: #0000FF;
+}

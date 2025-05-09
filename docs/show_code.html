@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for participating in our study.">
+    <title>Thank you for participating in our study.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>研究へご協力いただきありがとうございます。</h1>
+    <p class="center">研究にご参加いただき，ありがとうございました。参加確認コードは以下の通りです。</p>
+    <p class="center"><span id="ccode" class="comp_code"></span></p>
+    <p class="center">このコードをクラウドソーシングの入力欄にコピーペーストして送信してください（謝礼の支払いに必要です）。入力後は，このページを閉じていただいて構いません。</p>
+    <script type="text/javascript">
+        function getargs() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const args = {};
+            for (const [key, value] of urlParams.entries()) {
+                args[key] = value;
+            }
+            return args;
+        }
+        
+        // ccodeが存在する場合、URLを生成してリダイレクト
+        const args = getargs();
+        const ccode = args.ccode;
+        const ccodeElement = document.getElementById("ccode");
+        if (ccode) {
+            ccodeElement.textContent = ccode;
+        } else {
+            // ccodeが存在しない場合、デフォルトのURLを使用
+            ccodeElement.textContent = "エラー: コードが見つかりません。";
+        }
+    </script>
+</body>
+</html>
