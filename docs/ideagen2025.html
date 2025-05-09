@@ -25,15 +25,15 @@
         // ccodeが存在する場合、URLを生成してリダイレクト
         const ccode = getCcode();
         if (ccode) {
-            const redirectUrl = `https://jp.surveymonkey.com/r/YYT573P?ccode=${ccode}`;
+            const fullURL = `https://jp.surveymonkey.com/r/YYT573P?ccode=${ccode}`;
             // window.location.href = redirectUrl;
         } else {
             // ccodeが存在しない場合、デフォルトのURLを使用
-            const redirectUrl = "https://jp.surveymonkey.com/r/YYT573P";
+            const fullURL = "https://jp.surveymonkey.com/r/YYT573P";
         }
         const linkElement = document.getElementById("dymamic-link");
-        linkElement.setAttribute("href", redirectUrl);
-        linkElement.textContent = redirectUrl
+        linkElement.setAttribute("href", fullURL);
+        linkElement.textContent = fullURL;
     </script>
 </body>
 </html>
