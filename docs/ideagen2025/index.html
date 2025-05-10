@@ -9,8 +9,8 @@
 </head>
 <body>
     <h1>Idea Generation Study</h1>
-    <p>You will be automatically redirected to the survey. <br> If it does'nt works well, please click the below link!</p>
-    <p><a id="dymamic-link" href="#">Survey Link</a></p>
+    <p>自動的に調査ページへとリダイレクトします<br> 移動しない場合は，下のリンクをクリックしてください。</p>
+    <p><a id="dymamic-link" href="#">調査ページへのリンク</a></p>
     <script type="text/javascript">
         // ランダムな cccode を生成
         function getCcode(length = 10) {
@@ -27,14 +27,20 @@
         let fullURL;
         if (ccode) {
             fullURL = `https://jp.surveymonkey.com/r/YYT573P?ccode=${ccode}`;
-            // window.location.href = redirectUrl;
         } else {
             // ccodeが存在しない場合、デフォルトのURLを使用
             fullURL = "https://jp.surveymonkey.com/r/YYT573P";
         }
         const linkElement = document.getElementById("dymamic-link");
         linkElement.setAttribute("href", fullURL);
-        // linkElement.textContent = fullURL;
+        // リダイレクトを実行
+        // 1秒後にリダイレクト
+        setTimeout(() => {
+            window.location.href = fullURL;
+        }, 1000); // 1秒後にリダイレクト    
+        /* window.location.href = fullURL; 
+        // リダイレクトまでの時間を設定（ミリ秒）
+        const redirectDelay = 1000; // 1秒 */
     </script>
 </body>
 </html>
