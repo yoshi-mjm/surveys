@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Belief Study 2025-06">
+    <title>Belief Study 2025-06</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <h1>Belief Study</h1>
+    <p class="centered">自動的に調査ページへとリダイレクトします<br> 移動しない場合は，下のリンクをクリックしてください。</p>
+    <p class="centered"><a id="dymamic-link" href="#">調査ページへのリンク</a></p>
+    <script src="./settings.js"></script>
+    <script src="../mysurvey.js"></script>
+    <script type="text/javascript">
+        import { baseURL } from './settings.js';
+
+        // ccodeが存在する場合、URLを生成してリダイレクト
+        const ccode = getCcode();
+        let fullURL;
+        if (ccode) {
+            fullURL = `https://jp.surveymonkey.com/r/YYT573P?ccode=${ccode}`;
+        } else {
+            // ccodeが存在しない場合、デフォルトのURLを使用
+            fullURL = "https://jp.surveymonkey.com/r/YYT573P";
+        }
+        const linkElement = document.getElementById("dymamic-link");
+        linkElement.setAttribute("href", fullURL);
+        // リダイレクトを実行
+        // 1秒後にリダイレクト
+        setTimeout(() => {
+            window.location.href = fullURL;
+        }, 1000); // 1秒後にリダイレクト    
+        /* window.location.href = fullURL; 
+        // リダイレクトまでの時間を設定（ミリ秒）
+        const redirectDelay = 1000; // 1秒 */
+    </script>
+</body>
+</html>
