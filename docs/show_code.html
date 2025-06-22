@@ -38,14 +38,14 @@
             return args;
         }
         
-        // ccodeが存在する場合、URLを生成してリダイレクト
+        // URL から ccode を取得
         const args = getargs();
         const ccode = args.ccode;
         const ccodeElement = document.getElementById("ccode");
         if (ccode) {
             ccodeElement.textContent = ccode;
         } else {
-            // ccodeが存在しない場合、デフォルトのURLを使用
+            // ccodeが存在しない場合、エラーメッセージを使用
             ccodeElement.textContent = "エラー: コードが見つかりません。";
         }
     </script>
