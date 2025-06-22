@@ -22,6 +22,7 @@
         // ccodeが存在する場合、URLを生成してリダイレクト
 
         // const ccode = getCcode(); mysurvey.jsで定義されている関数を使用
+        const jsPsych = initJsPsych();
         const ccode = jsPsych.randomization.randomID(10); // jsPsychのランダムID生成関数を使用
 
         // URLを生成
