@@ -5,29 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Thank you for participating in our study.">
     <title>Thank you for participating in our study.</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-            padding: 50px;
-        }
-        .comp_code {
-            font-size: 24px;
-            font-weight: bold;
-            color: #007BFF;
-        }
-        .center {
-            text-align: center;
-        }
-    </style>
-</head>
+    <link rel="stylesheet" href="../styles.css"> </head>
 <body>
-    <h1>研究へご協力いただきありがとうございます。</h1>
-    <p class="center">研究にご参加いただき，ありがとうございました。参加確認コードは以下の通りです。</p>
-    <p class="center"><span id="ccode" class="comp_code"></span></p>
-    <p class="center">このコードをクラウドソーシングの入力欄にコピーペーストして送信してください（謝礼の支払いに必要です）。入力後は，このページを閉じていただいて構いません。</p>
+    <div class="container"> <h1>研究へご協力いただきありがとうございます。</h1>
+        <p class="centered">研究にご参加いただき，ありがとうございました。参加確認コードは以下の通りです。</p>
+        <p class="centered"><span id="ccode" class="completion-code-display"></span></p> <p class="centered">このコードをクラウドソーシングの入力欄にコピーペーストして送信してください（謝礼の支払いに必要です）。入力後は，このページを閉じていただいて構いません。</p>
+    </div>
     <script type="text/javascript">
         function getargs() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -37,7 +20,7 @@
             }
             return args;
         }
-        
+
         // URL から ccode を取得
         const args = getargs();
         const ccode = args.ccode;

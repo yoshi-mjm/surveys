@@ -1,9 +1,104 @@
+/* 基本スタイル */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f8f8; /* やや明るい背景色 */
+    color: #333; /* 濃いめのテキスト色 */
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; /* paddingがwidthに影響しないように */
+}
+
+/* コンテンツを囲むコンテナ */
+.container {
+    max-width: 800px; /* 最大幅を設定 */
+    margin: 40px auto; /* 上下に余白、左右中央寄せ */
+    padding: 30px;
+    background-color: #ffffff; /* 白い背景 */
+    border-radius: 8px; /* 角を丸くする */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 影を追加 */
+}
+
+/* 見出し */
+h1 {
+    text-align: center;
+    color: #2c3e50; /* 濃い目の青 */
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    line-height: 1.3;
+}
+
+/* 中央寄せテキスト */
 .centered {
   text-align: center;
+  margin-bottom: 15px; /* 段落間の余白 */
 }
-.comp_code {
-    font-family: monospace;
-    font-size: x-large;
-    text-align: center;
-    color: #0000FF;
+
+/* リンクスタイル */
+a {
+    color: #007bff; /* 青色のリンク */
+    text-decoration: none; /* 下線なし */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3; /* ホバー時に少し濃い青 */
+    text-decoration: underline; /* ホバー時に下線 */
+}
+
+/* 完了コード表示スタイル (LPとコード表示ページの両方で利用) */
+.completion-code-display { /* 新しいクラス名 */
+    font-family: 'Courier New', monospace; /* 等幅フォント */
+    font-size: 2.5em; /* 大きなフォントサイズ */
+    font-weight: bold;
+    color: #007BFF; /* 目立つ青色 */
+    background-color: #e9f5ff; /* 薄い青の背景 */
+    padding: 15px 25px; /* 内側の余白 */
+    border-radius: 5px; /* 角を丸くする */
+    display: inline-block; /* インラインブロック要素 */
+    margin: 20px 0; /* 上下の余白 */
+    border: 1px solid #b3d9ff; /* 控えめな境界線 */
+    letter-spacing: 1px; /* 文字間隔を少し開ける */
+}
+
+/* モバイル向けレスポンシブデザイン */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .completion-code-display {
+        font-size: 1.8em; /* モバイルでは少し小さく */
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .completion-code-display {
+        font-size: 1.5em;
+        padding: 8px 12px;
+    }
 }
