@@ -15,7 +15,7 @@
     <!-- <script src="./settings.js"></script>
     <script src="../mysurvey.js"></script> -->
     <script type="module">
-        import { baseURL } from './settings.js';
+        import { baseURL, redirect } from './settings.js';
         // const baseURL = 'https://jp.surveymonkey.com/r/YYT573P';
         import { getSurveyLink } from '../mysurvey.js';
 
@@ -40,9 +40,13 @@
         // リダイレクトを実行
         // 1秒後にリダイレクト
         const redirectDelay = 1000; // 1秒
-        setTimeout(() => {
-            window.location.href = fullURL;
-        }, redirectDelay);
+        if (redirect) {
+            setTimeout(() => {
+                window.location.href = fullURL;
+            }, redirectDelay);
+        } else {
+            console.log(`Redirect is disabled. Click the link to go to the survey: ${fullURL}`);
+        }
     </script>
 </body>
 </html>
